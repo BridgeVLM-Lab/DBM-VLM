@@ -11,7 +11,7 @@ We have centrally hosted the training weights on the **Kaggle platform**. You ca
 * **[DBM-Comp](https://www.kaggle.com/datasets/zjw1176380908/dbm-comp)**
 * **[DBM-Conseg](https://www.kaggle.com/datasets/zjw1176380908/dbm-conseg)**
 * **[DBM-Stlseg](https://www.kaggle.com/datasets/zjw1176380908/dbm-stlseg)**
-
+* **[data_DBMseg](https://www.kaggle.com/datasets/zjw1176380908/data-dbmseg)**
 💡 **Ultralytics 平台全面兼容**：
 本项目代码与权重全面兼容 **Ultralytics** 平台。您可以直接使用yolo标准测试代码加载上述下载的预训练权重，在真实桥梁巡检场景下进行快速的病害检测与分割测试；同时，这些权重也完全支持作为高质量的预训练基座，结合我们一并提供的配置文件，帮助您在自定义的数据集上继续训练与微调，大幅加速模型收敛并提升泛化能力。
 
