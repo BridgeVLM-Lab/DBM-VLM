@@ -79,3 +79,12 @@ If DBM-65k is useful in your research, please cite the accompanying preprint:
   year    = {2026},
   doi     = {10.31224/7511}
 }
+
+
+## License
+
+The source code, configuration files, and repository documentation are licensed under the [Apache License 2.0](LICENSE).
+
+Copyright 2026 BridgeVLM-Lab. See [NOTICE](NOTICE) for attribution information.
+
+DBM-65k datasets, pretrained model weights, and other large research artifacts are distributed separately through the public resource links provided in this repository. Their applicable license terms are provided with the corresponding released resources.
