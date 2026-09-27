@@ -1,37 +1,81 @@
-### 📦 数据集、模型权重与配置文件下载
+# DBM-VLM / DBM-65k
 
-DBM-65k 数据集、预训练模型权重及相关配置文件统一托管于 **Kaggle 平台**。所有资源均公开提供，以支持模型复现、基准测试及后续研究。您可以通过以下链接下载对应任务的完整资源：
+**DBM-65k** is a large-scale, multi-scale benchmark for data-centric bridge damage identification. This repository provides the public project entry point for the benchmark, including dataset links, pretrained-weight links, task configuration files, and the BridgeVLM project description.
 
-* **[DBM-Con](https://www.kaggle.com/datasets/zjw1176380908/dbm-con)**
-* **[DBM-Stl](https://www.kaggle.com/datasets/zjw1176380908/dbm-stl)**
-* **[DBM-Comp](https://www.kaggle.com/datasets/zjw1176380908/dbm-comp)**
-* **[DBM-Conseg](https://www.kaggle.com/datasets/zjw1176380908/dbm-conseg)**
-* **[DBM-Stlseg](https://www.kaggle.com/datasets/zjw1176380908/dbm-stlseg)**
-* **[data_DBMseg](https://www.kaggle.com/datasets/zjw1176380908/data-dbmseg)**
-* **[data_DBM](https://www.kaggle.com/datasets/zjw1176380908/data-dbm)**
+The accompanying preprint is:
 
-💡 **兼容 Ultralytics 平台**
+> **DBM-65k: A large-scale multi-scale dataset and benchmark for data-centric bridge damage identification**  
+> DOI: [10.31224/7511](https://doi.org/10.31224/7511)
 
-本项目提供的代码、配置文件和模型权重与 **Ultralytics** 平台兼容。用户可以使用标准 YOLO 推理流程直接加载预训练权重，在真实桥梁巡检图像上开展病害检测与分割测试。
+## Overview
 
-此外，所提供的预训练权重可作为后续迁移学习和微调的初始化模型，并可结合对应配置文件用于自定义数据集训练，以提高训练效率并促进模型复现与扩展。
+DBM-65k is designed to support reproducible research on bridge damage detection and segmentation across multiple scales and bridge components. The benchmark contains more than 65,000 images and provides task-specific resources for detection and segmentation experiments.
 
-### 📦 Datasets, Model Weights, and Configuration Files
+This repository is actively maintained. Public datasets and pretrained weights are hosted on Kaggle because of their size, while task configuration files are versioned here on GitHub.
 
-The DBM-65k datasets, pretrained model weights, and corresponding configuration files are publicly hosted on the **Kaggle platform**. These resources are provided to support reproducibility, benchmarking, and further research. The complete resources for each task can be accessed through the following links:
+## Public Resources
 
-* **[DBM-Con](https://www.kaggle.com/datasets/zjw1176380908/dbm-con)**
-* **[DBM-Stl](https://www.kaggle.com/datasets/zjw1176380908/dbm-stl)**
-* **[DBM-Comp](https://www.kaggle.com/datasets/zjw1176380908/dbm-comp)**
-* **[DBM-Conseg](https://www.kaggle.com/datasets/zjw1176380908/dbm-conseg)**
-* **[DBM-Stlseg](https://www.kaggle.com/datasets/zjw1176380908/dbm-stlseg)**
-* **[data_DBMseg](https://www.kaggle.com/datasets/zjw1176380908/data-dbmseg)**
-* **[data_DBM](https://www.kaggle.com/datasets/zjw1176380908/data-dbm)**
+| Resource | Purpose | Link |
+| --- | --- | --- |
+| DBM-Con | Detection task subset | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/dbm-con) |
+| DBM-Stl | Detection task subset | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/dbm-stl) |
+| DBM-Comp | Detection task subset | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/dbm-comp) |
+| DBM-Conseg | Segmentation task subset | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/dbm-conseg) |
+| DBM-Stlseg | Segmentation task subset | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/dbm-stlseg) |
+| data_DBM | Consolidated detection resources | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/data-dbm) |
+| data_DBMseg | Consolidated segmentation resources | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/data-dbmseg) |
+| BridgeVLM | Vision-language resources | [Kaggle](https://www.kaggle.com/datasets/zjw1176380908/bridgevlm) |
 
-💡 **Compatibility with Ultralytics**
+## Repository Structure
 
-The provided code, configuration files, and pretrained model weights are compatible with the **Ultralytics** framework. Users can directly load the pretrained weights using the standard YOLO inference pipeline for bridge damage detection and segmentation in real-world inspection images.
+```text
+DBM-VLM/
+├── README.md
+├── VLM/
+│   └── README.md
+└── yaml/
+    ├── DBM-Comp.yaml
+    ├── DBM-Con.yaml
+    ├── DBM-Conseg.yaml
+    ├── DBM-Stl.yaml
+    └── DBM-Stlseg.yaml
 
-The pretrained weights can also serve as initialization models for transfer learning and fine-tuning on custom datasets. Together with the provided configuration files, they facilitate reproducible training, efficient model adaptation, and further extension of the DBM framework.
+yaml/ contains task configuration files used by the public benchmark resources.
+VLM/ contains the current BridgeVLM project description and resource entry point.
+Large datasets and model weights are hosted externally on Kaggle.
 
-DBM-Con, DBM-Stl, DBM-Comp, DBM-Conseg, and DBM-Stlseg correspond to the five task subsets described in the paper, while data_DBM and data_DBMseg provide the consolidated resources used for detection and segmentation experiments, respectively.
+Getting Started
+1. Clone the repository
+git clone https://github.com/BridgeVLM-Lab/DBM-VLM.git
+cd DBM-VLM
+2. Download the required dataset and pretrained weights
+Choose the relevant task from the table above and download its resources from Kaggle.
+3. Use the corresponding configuration file
+For example:
+yaml/DBM-Con.yaml
+yaml/DBM-Comp.yaml
+yaml/DBM-Conseg.yaml
+4. Ultralytics-compatible workflows
+The released resources are intended to support Ultralytics-style detection and segmentation workflows. Where a downloaded checkpoint is directly compatible with the installed Ultralytics version, a standard inference workflow can be used, for example:
+pip install ultralytics
+yolo predict model=/path/to/model.pt source=/path/to/images
+Please use the configuration and checkpoint versions provided with each resource package when reproducing benchmark results.
+BridgeVLM
+BridgeVLM extends the project toward vision-language reasoning for bridge inspection, including defect-component semantic association, semi-supervised learning, standard-constrained report generation, and multimodal reasoning.
+See [README.md](VLM/README.md) for the current project description and resource link.
+Reproducibility and Maintenance
+Our current maintenance priorities are:
+- keeping public dataset, weight, and configuration links accessible;
+- improving benchmark documentation and reproducibility;
+- expanding training, evaluation, and inference instructions;
+- reviewing external bug reports and contributions;
+- improving automation for configuration validation, testing, and releases.
+If you find a broken resource, configuration issue, or reproducibility problem, please open a GitHub issue with the task name, environment details, and reproduction steps.
+Citation
+If DBM-65k is useful in your research, please cite the accompanying preprint:
+@article{zheng2026dbm65k,
+  title   = {DBM-65k: A large-scale multi-scale dataset and benchmark for data-centric bridge damage identification},
+  author  = {Zheng, Junwen and Feng, Hao and Zhang, Jinghuan and Zhang, Jian},
+  year    = {2026},
+  doi     = {10.31224/7511}
+}
