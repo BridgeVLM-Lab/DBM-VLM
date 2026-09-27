@@ -1,0 +1,14 @@
+DBM-VLM / DBM-65k
+
+Copyright 2026 BridgeVLM-Lab
+
+This product includes source code, configuration files, and documentation
+developed and maintained by BridgeVLM-Lab.
+
+The source code, configuration files, and repository documentation are
+licensed under the Apache License, Version 2.0.
+
+DBM-65k datasets, pretrained model weights, and other large research
+artifacts are distributed separately through the public resource links
+provided in this repository. Their applicable license terms are provided
+with the corresponding released resources.
