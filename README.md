@@ -108,7 +108,6 @@ If DBM-65k is useful in your research, please cite the accompanying preprint:
 ```bibtex
 @article{zheng2026dbm65k,
   title   = {DBM-65k: A large-scale multi-scale dataset and benchmark for data-centric bridge damage identification},
-  author  = {Zheng, Junwen and Feng, Hao and Zhang, Jinghuan and Zhang, Jian},
   year    = {2026},
   doi     = {10.31224/7511}
 }
