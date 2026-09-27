@@ -30,6 +30,8 @@ This repository is actively maintained. Public datasets and pretrained weights a
 
 ```text
 DBM-VLM/
+├── LICENSE
+├── NOTICE
 ├── README.md
 ├── VLM/
 │   └── README.md
@@ -39,47 +41,82 @@ DBM-VLM/
     ├── DBM-Conseg.yaml
     ├── DBM-Stl.yaml
     └── DBM-Stlseg.yaml
+```
 
-yaml/ contains task configuration files used by the public benchmark resources.
-VLM/ contains the current BridgeVLM project description and resource entry point.
-Large datasets and model weights are hosted externally on Kaggle.
+- `yaml/` contains task configuration files used by the public benchmark resources.
+- `VLM/` contains the current BridgeVLM project description and resource entry point.
+- Large datasets and pretrained model weights are hosted externally on Kaggle.
 
-Getting Started
-1. Clone the repository
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/BridgeVLM-Lab/DBM-VLM.git
 cd DBM-VLM
-2. Download the required dataset and pretrained weights
-Choose the relevant task from the table above and download its resources from Kaggle.
-3. Use the corresponding configuration file
+```
+
+### 2. Download the required dataset and pretrained weights
+
+Choose the relevant task from the resource table above and download the corresponding resources from Kaggle.
+
+### 3. Use the corresponding configuration file
+
 For example:
+
+```text
 yaml/DBM-Con.yaml
 yaml/DBM-Comp.yaml
 yaml/DBM-Conseg.yaml
-4. Ultralytics-compatible workflows
-The released resources are intended to support Ultralytics-style detection and segmentation workflows. Where a downloaded checkpoint is directly compatible with the installed Ultralytics version, a standard inference workflow can be used, for example:
+```
+
+### 4. Ultralytics-compatible workflows
+
+The released resources are intended to support Ultralytics-style detection and segmentation workflows.
+
+For compatible checkpoints, a standard inference workflow can be used, for example:
+
+```bash
 pip install ultralytics
 yolo predict model=/path/to/model.pt source=/path/to/images
+```
+
 Please use the configuration and checkpoint versions provided with each resource package when reproducing benchmark results.
-BridgeVLM
+
+## BridgeVLM
+
 BridgeVLM extends the project toward vision-language reasoning for bridge inspection, including defect-component semantic association, semi-supervised learning, standard-constrained report generation, and multimodal reasoning.
-See [README.md](VLM/README.md) for the current project description and resource link.
-Reproducibility and Maintenance
+
+See [VLM/README.md](VLM/README.md) for the current project description and resource link.
+
+## Reproducibility and Maintenance
+
 Our current maintenance priorities are:
+
 - keeping public dataset, weight, and configuration links accessible;
 - improving benchmark documentation and reproducibility;
 - expanding training, evaluation, and inference instructions;
 - reviewing external bug reports and contributions;
 - improving automation for configuration validation, testing, and releases.
+
 If you find a broken resource, configuration issue, or reproducibility problem, please open a GitHub issue with the task name, environment details, and reproduction steps.
-Citation
+
+## Citation
+
 If DBM-65k is useful in your research, please cite the accompanying preprint:
+
+```bibtex
 @article{zheng2026dbm65k,
   title   = {DBM-65k: A large-scale multi-scale dataset and benchmark for data-centric bridge damage identification},
   author  = {Zheng, Junwen and Feng, Hao and Zhang, Jinghuan and Zhang, Jian},
   year    = {2026},
   doi     = {10.31224/7511}
 }
+```
 
+## Contact
+
+For reproducibility questions, broken links, and community contributions, please use GitHub Issues so that discussions remain public and searchable.
 
 ## License
 
